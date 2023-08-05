@@ -71,7 +71,7 @@ def aggregategenerators(
         set(attrs.index[attrs.static & attrs.status.str.startswith("Input")])
         | {"weight"}
     ) & set(generators.columns) - {"control"}
-    grouper = [generators.bus, generators.carrier]
+    grouper = [generators.bus, generators.carrier, generators.type]
 
     def normed_or_uniform(x):
         return (
